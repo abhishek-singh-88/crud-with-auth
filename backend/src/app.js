@@ -12,11 +12,13 @@ const app = express()
 
 app.use(cors({
     origin:"http://localhost:5173",
-    Credential:true,
+    credentials:true
 }))
 app.use(cookieParser())
 app.use(express.json())
 app.use(fileUpload())
+app.use("/static",express.static('src/uploads'))
+app.use("/static",express.static('src/uploads/profiles'))
 
 app.use('/auth/user', authroutes)
 app.use('/product', productRoute)

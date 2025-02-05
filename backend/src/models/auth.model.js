@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
         required:true,
 
     }
-})
+},{strict:false})
 
 
 const User = mongoose.model("User", userSchema)

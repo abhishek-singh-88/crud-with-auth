@@ -1,4 +1,5 @@
 import React from 'react'
+import validateUser from '../components/ValidateUser'
 
 function Dashboard() {
   return (
@@ -6,4 +7,4 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export default validateUser(Dashboard)

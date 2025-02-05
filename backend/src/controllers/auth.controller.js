@@ -49,11 +49,19 @@ export const profile = async (req, res) => {
   try {
     let _id = req.user.userId;
     let user = await User.findOne({ _id });
+    console.log(user);
+    
     const { name, email } = user;
+
+    const img = user?.img || null
+    
+    
     res.status(200).json({
       message: `Hi ${name.split(" ")[0]}, welcome to profile `,
       name,
       email,
+      _id, 
+      img
     });
   } catch (error) {
     console.log("error in profile controller : ", error.message);
@@ -76,3 +84,26 @@ export const logout = async (req, res) => {
     res.status(500).json({ message: "Internal server error ! " });
   }
 };
+
+
+
+export const uploadImg = async (req, res) =>{
+  try {
+    let {_id} = req.params;
+    console.log(req.files);
+    
+    let {img} =  req.files
+    img.mv(`src/uploads/profiles/${img.name}`, async(err)=>{
+      if(err){
+          res.status(400).json({message:"Problem in file moves !", err})
+      }
+    })
+
+   let user =  await User.findByIdAndUpdate({_id}, {img : img.name}, {new:true})
+   res.status(201).json({message:"Profile image uploaded successfully ! ", img: img.name, user})
+  } catch (error) {
+    console.log("Error in uploadImg controller : ", error.message);
+    res.status(500).json({message:"Internal server error ! "})
+    
+  }
+}

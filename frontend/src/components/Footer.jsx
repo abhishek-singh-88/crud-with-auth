@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <>
-    <div className="box text-black  ">
+    <div className="box text-black container-fluid  ">
         <div className=" row bg-secondary-subtle p-3 rounded-3 shadow-lg">
             <div className="col-sm-6 col-md-3 p-3 pt-5 ">
                 <h4>HYDRA_ABNK Footer</h4>

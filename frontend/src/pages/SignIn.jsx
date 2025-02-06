@@ -52,7 +52,7 @@ async function signup(data) {
         <button onClick={()=> setValue('login')} className={ value == 'login' ? `btn btn-outline-success shadow-lg me-3`:`btn btn-outline-warning me-3`}>Login</button>
         </div>
         {value == 'signup' && 
-    <div className="row">
+    <div className="row mb-5">
       <div className="col-sm-8 col-md-6 col-lg-4 bg-light rounded-3 mx-auto shadow p-4 mt-4 ">
         <div className='text-center text-info' style={{fontSize:"50px"}}>
         <FaRegUser className=''/>

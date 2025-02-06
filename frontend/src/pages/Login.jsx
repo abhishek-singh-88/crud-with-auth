@@ -39,7 +39,7 @@ function Login({ setValue }) {
 
   return (
     <>
-      <div className="row">
+      <div className="row mb-5">
         <div className="col-sm-8 col-md-6 col-lg-4 bg-light rounded-3 mx-auto shadow p-4 mt-4 ">
           <div className="text-center text-info" style={{ fontSize: "50px" }}>
             <FaRegUser className="" />
@@ -65,7 +65,7 @@ function Login({ setValue }) {
               <p className="text-danger">{errors.password.message}</p>
             )}
             <button className="btn btn-success mt-4">Login</button>
-            <br />
+            <br /> <br />
             <p>
               Don't have account ?{" "}
               <span
